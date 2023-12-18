@@ -6,3 +6,16 @@ html {
   scroll-behavior: smooth;
   @apply bg-gray-50;
 }
+
+#hero {
+  height: calc(100vh - 80px);
+}
+
+.three-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: radial-gradient(ellipse at bottom, #1b2735 0, #090a0f 100%);
+}

@@ -24,7 +24,7 @@ const getSocialIcon = (name: SocialLinkNames) => {
 export const Header = () => {
   return (
     <>
-      <section className="fixed z-10 flex w-full items-center justify-between bg-white shadow-md">
+      <section className="fixed z-20 flex w-full items-center justify-between bg-white shadow-md">
         <Link className="p-4 text-[2rem] font-semibold" href="/">
           Toby Gates.
         </Link>

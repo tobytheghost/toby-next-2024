@@ -16,7 +16,7 @@ export const AboutSection = () => {
             <H3>Who am I?</H3>
             <Image
               className="mb-4 rounded-full"
-              src="/assets/toby-gates.jpg"
+              src="/assets/img/toby-gates.jpg"
               alt="Toby Gates"
               width={150}
               height={150}
