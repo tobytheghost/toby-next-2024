@@ -7,7 +7,7 @@ export const AboutSection = () => {
   return (
     <section
       id="about"
-      className="flex flex-col items-center justify-center bg-gray-50 px-4 py-12"
+      className="flex flex-col items-center justify-center px-4 py-12"
     >
       <div className="container flex flex-col items-center ">
         <H2>About Me</H2>
