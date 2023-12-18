@@ -1,7 +1,12 @@
 import Image from "next/image";
 import { H2, H3, P } from "../typography";
 import { TechCard } from "../TechCard";
-import { FrontEndIcon, BackEndIcon, GitIcon, SupportIcon } from "../svgs";
+import {
+  FrontEndIcon,
+  BackEndIcon,
+  GitIcon,
+  SupportIcon,
+} from "../svgs/techCardSvgs";
 
 export const AboutSection = () => {
   return (

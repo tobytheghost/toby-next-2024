@@ -8,7 +8,7 @@ import {
 } from "~/contexts/navigation/socialLinks";
 import { FacebookSvg, GithubSvg, LinkedInSvg } from "../svgs/headerSvgs";
 import { assertUnreachable } from "~/utils/typescriptUtilities";
-import { MenuSvg } from "../svgs";
+import { MenuSvg } from "../svgs/miscSvgs";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 

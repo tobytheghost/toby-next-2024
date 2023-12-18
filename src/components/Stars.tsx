@@ -88,7 +88,7 @@ const Orbital = () => {
   return (
     <group ref={orbital} position={[-6, -2, -2]}>
       <Suspense fallback={null}>
-        <CloudSphere position={[1, 0, 1]} size={[0.2, 8, 8]} color="#8a8a8a" />
+        <CloudSphere position={[1, 0, 1]} size={[0.2, 8, 8]} color="#fafafa" />
         <ColourSphere position={[0, 0, 0]} size={[0.6, 8, 8]} color="#5fb7ff" />
       </Suspense>
     </group>

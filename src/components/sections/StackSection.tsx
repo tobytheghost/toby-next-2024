@@ -8,7 +8,7 @@ import {
   TailwindIcon,
   TypescriptIcon,
   ZodIcon,
-} from "../svgs";
+} from "../svgs/stackCardSvgs";
 
 export const StackSection = () => {
   return (
