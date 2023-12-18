@@ -7,7 +7,6 @@ import {
   YellowClickyLink,
 } from "../buttons";
 import StarsCanvas from "../Stars";
-import { ThreeDRotationIcon } from "../svgs";
 import { useTypewriter } from "~/hooks/useTypewriter";
 
 export const HeroSection = () => {

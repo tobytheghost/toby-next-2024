@@ -11,7 +11,6 @@ import { assertUnreachable } from "~/utils/typescriptUtilities";
 import { MenuSvg } from "../svgs";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import path from "path";
 
 const getSocialIcon = (name: SocialLinkNames) => {
   switch (name) {

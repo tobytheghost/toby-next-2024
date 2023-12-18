@@ -19,8 +19,14 @@ export const ContactForm = () => {
       .min(3, "Name must contain at least 3 characters")
       .max(100, "Name must contain less than 100 characters"),
     email: z.string().email(),
-    subject: z.string().min(3).max(100),
-    message: z.string().min(3).max(1000),
+    subject: z
+      .string()
+      .min(3, "Subject must contain at least 3 characters")
+      .max(100, "Subject must contain less than 100 characters"),
+    message: z
+      .string()
+      .min(3, "Message must contain at least 3 characters")
+      .max(1000, "Message must contain less than 1000 characters"),
   });
 
   const form = useForm<FormValues>({
