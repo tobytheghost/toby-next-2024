@@ -7,7 +7,7 @@ export const BlogSection = async ({ posts }: { posts: AllPosts }) => {
   return (
     <section
       id="blog"
-      className="flex flex-col items-center justify-center  px-4 py-16"
+      className="flex flex-col items-center justify-center px-4 py-16"
     >
       <div className="container flex flex-col items-center">
         <H2>Latest Articles</H2>
