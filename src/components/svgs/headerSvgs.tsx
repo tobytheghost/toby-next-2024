@@ -1,7 +1,7 @@
-export const GithubSvg = ({ color = "black" }: { color?: string }) => {
+export const GithubSvg = ({ className }: { className?: string }) => {
   return (
     <svg
-      className={`text-${color}`}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       width="24px"
@@ -13,10 +13,10 @@ export const GithubSvg = ({ color = "black" }: { color?: string }) => {
   );
 };
 
-export const LinkedInSvg = ({ color = "black" }: { color?: string }) => {
+export const LinkedInSvg = ({ className }: { className?: string }) => {
   return (
     <svg
-      className={`text-${color}`}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       width="24px"
@@ -28,10 +28,10 @@ export const LinkedInSvg = ({ color = "black" }: { color?: string }) => {
   );
 };
 
-export const FacebookSvg = ({ color = "black" }: { color?: string }) => {
+export const FacebookSvg = ({ className }: { className?: string }) => {
   return (
     <svg
-      className={`text-${color}`}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       width="24px"

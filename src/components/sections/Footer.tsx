@@ -9,11 +9,11 @@ import { YellowClickyLink } from "../buttons";
 const getIcon = (name: SocialLinkNames) => {
   switch (name) {
     case "LinkedIn":
-      return <LinkedInSvg color="black" />;
+      return <LinkedInSvg className="fill-black" />;
     case "Facebook":
-      return <FacebookSvg color="black" />;
+      return <FacebookSvg className="fill-black" />;
     case "Github":
-      return <GithubSvg color="black" />;
+      return <GithubSvg className="fill-black" />;
     default:
       return assertUnreachable(name);
   }

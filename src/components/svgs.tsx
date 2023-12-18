@@ -1,6 +1,7 @@
-export const MenuSvg = () => {
+export const MenuSvg = ({ className }: { className?: string }) => {
   return (
     <svg
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       width="24px"
@@ -312,7 +313,7 @@ export const ExpressIcon = () => (
 
 export const ThreeDRotationIcon = () => (
   <svg
-    className="h-12 w-12 fill-white"
+    className="h-6 w-6 fill-black"
     xmlns="http://www.w3.org/2000/svg"
     width="24"
     height="24"

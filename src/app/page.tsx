@@ -1,5 +1,6 @@
 import { AboutSection } from "~/components/sections/AboutSection";
 import { BlogSection } from "~/components/sections/BlogSection";
+import { CtaSection } from "~/components/sections/CtaSection";
 import { HeroSection } from "~/components/sections/HeroSection";
 import { StackSection } from "~/components/sections/StackSection";
 import { getAllPostsQuery } from "~/contexts/blog/getAllPosts.query";
@@ -17,6 +18,7 @@ export default async function HomePage() {
       <HeroSection />
       <AboutSection />
       <StackSection />
+      <CtaSection />
       <BlogSection posts={posts} />
     </>
   );

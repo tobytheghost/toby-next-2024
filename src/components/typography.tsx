@@ -32,5 +32,7 @@ export const H3 = ({ children, className }: TypographyProps) => {
 };
 
 export const P = ({ children, className }: TypographyProps) => {
-  return <p className={`mb-4 last-of-type:mb-0 ${className}`}>{children}</p>;
+  return (
+    <p className={`mb-4 group-last-of-type:mb-0 ${className}`}>{children}</p>
+  );
 };

@@ -22,7 +22,7 @@ export const WhiteClickyLink = ({ children, ...props }: LinkProps) => {
       className="relative top-[2px] inline-block w-auto rounded-md border-[1px] border-yellow-700 bg-yellow-700 text-center text-black"
       {...props}
     >
-      <span className="relative mx-[-1.5px] block w-auto -translate-y-1 select-none rounded-md border-[1px] border-yellow-500 bg-gray-100 px-5 py-2 text-center font-semibold hover:-translate-y-1.5 active:-translate-y-0.5 active:transition-all active:duration-100">
+      <span className="relative mx-[-1.5px] block w-auto -translate-y-1 select-none rounded-md border-[1px] border-yellow-500 bg-gray-50 px-5 py-2 text-center font-semibold hover:-translate-y-1.5 active:-translate-y-0.5 active:transition-all active:duration-100">
         {children}
       </span>
     </Link>
@@ -48,7 +48,7 @@ export const WhiteClickyButton = ({ children, ...props }: ButtonProps) => {
       className="relative top-[2px] inline-block w-auto rounded-md border-[1px] border-yellow-700 bg-yellow-700 text-center text-black"
       {...props}
     >
-      <span className="relative mx-[-1.5px] block w-auto -translate-y-1 select-none rounded-md border-[1px] border-yellow-500 bg-gray-100 px-5 py-2 text-center font-semibold hover:-translate-y-1.5 active:-translate-y-0.5 active:transition-all active:duration-100">
+      <span className="relative mx-[-1.5px] block w-auto -translate-y-1 select-none rounded-md border-[1px] border-yellow-500 bg-gray-50 px-5 py-2 text-center font-semibold hover:-translate-y-1.5 active:-translate-y-0.5 active:transition-all active:duration-100">
         {children}
       </span>
     </button>
