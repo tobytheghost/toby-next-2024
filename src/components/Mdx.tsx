@@ -1,6 +1,5 @@
 "use client";
 
-import { Ref } from "react";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote";
 import { type BlogPostSource } from "~/utils/blogPostParser";
