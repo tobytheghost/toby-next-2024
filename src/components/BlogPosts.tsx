@@ -27,7 +27,9 @@ const BlogPosts = ({ posts }: { posts: AllPosts }) => {
             </p>
             <div className="mb-4 flex gap-2">
               {tags.map((tag) => (
-                <span className="rounded-xl bg-yellow-500 px-2">{tag}</span>
+                <span className="rounded-xl bg-blue-400 px-2 font-semibold">
+                  {tag}
+                </span>
               ))}
             </div>
             <p>{snippet}</p>

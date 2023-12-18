@@ -14,7 +14,7 @@ export const HeroSection = () => {
   const [orbit, setOrbit] = useState(false);
   const toggleOrbit = () => setOrbit((orbit) => !orbit);
 
-  useTypewriter([
+  const typewriter = useTypewriter([
     "a Full-Stack Engineer.",
     "a problem solver.",
     "an out-of-the-box thinker.",
@@ -34,11 +34,11 @@ export const HeroSection = () => {
       >
         {!orbit && (
           <>
-            <h1 className="mb-4 text-center text-6xl font-semibold ">
+            <h1 className="mb-4 text-center text-4xl font-semibold md:text-6xl ">
               Hi, i'm <span className="text-yellow-500">Toby Gates</span>.
             </h1>
-            <h2 className="mb-8 text-center text-3xl font-semibold">
-              I'm a full stack web developer.
+            <h2 className="mb-8 text-center text-2xl font-semibold md:text-3xl">
+              I'm <span ref={typewriter}>full stack web developer.</span>
             </h2>
             <div className="flex gap-4">
               <YellowClickyLink href="/contact">Contact Me</YellowClickyLink>

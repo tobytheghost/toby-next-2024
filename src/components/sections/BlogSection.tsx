@@ -1,18 +1,18 @@
 import { H2 } from "../typography";
 import { type AllPosts } from "~/contexts/blog/getAllPosts.query";
-import { WhiteClickyLink } from "../buttons";
+import { YellowClickyLink } from "../buttons";
 import BlogPosts from "../BlogPosts";
 
 export const BlogSection = async ({ posts }: { posts: AllPosts }) => {
   return (
     <section
       id="blog"
-      className="flex flex-col items-center justify-center  px-4 py-12"
+      className="flex flex-col items-center justify-center  px-4 py-16"
     >
       <div className="container flex flex-col items-center">
         <H2>Latest Articles</H2>
         <BlogPosts posts={posts} />
-        <WhiteClickyLink href="/blog">View more articles</WhiteClickyLink>
+        <YellowClickyLink href="/blog">View more articles</YellowClickyLink>
       </div>
     </section>
   );

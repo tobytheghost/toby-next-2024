@@ -5,7 +5,7 @@ export const CtaSection = () => {
   return (
     <section
       id="cta"
-      className="flex flex-col items-center justify-center bg-gray-100 px-4 py-12"
+      className="flex flex-col items-center justify-center bg-gray-100 px-4 py-16"
     >
       <div className="container flex flex-col items-center ">
         <P>

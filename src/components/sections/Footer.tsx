@@ -21,7 +21,7 @@ const getIcon = (name: SocialLinkNames) => {
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col items-center justify-center gap-4 bg-gray-950 py-8 text-white">
+    <footer className="flex flex-col items-center justify-center gap-4 bg-gray-950 py-12 text-white">
       <ul className="flex gap-4">
         {socialLinks.map(({ name, url }) => (
           <li key={name}>

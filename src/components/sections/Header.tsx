@@ -11,6 +11,7 @@ import { assertUnreachable } from "~/utils/typescriptUtilities";
 import { MenuSvg } from "../svgs";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import path from "path";
 
 const getSocialIcon = (name: SocialLinkNames) => {
   switch (name) {
@@ -48,13 +49,29 @@ export const Header = () => {
           }`}
         >
           <ul className="m-auto flex flex-col items-center justify-center md:flex-row md:justify-between">
-            {menuItems.map(({ name, url }) => (
-              <li key={name}>
-                <Link className="block p-4 text-2xl font-semibold" href={url}>
-                  {name}
-                </Link>
-              </li>
-            ))}
+            {menuItems.map(({ name, url }) => {
+              if (url === pathname)
+                return (
+                  <li key={name}>
+                    <button
+                      className="relative block p-4 text-2xl font-semibold text-yellow-500"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {name}
+                    </button>
+                  </li>
+                );
+              return (
+                <li key={name}>
+                  <Link
+                    className="relative block p-4 text-2xl font-semibold"
+                    href={url}
+                  >
+                    {name}
+                  </Link>
+                </li>
+              );
+            })}
             <li className="text-2xl font-semibold">
               <ul className="flex">
                 {socialLinks.map(({ name, url }) => (
