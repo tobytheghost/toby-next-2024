@@ -1,18 +1,16 @@
-import Link from "next/link";
 import NextImage from "next/image";
-
-import { H2 } from "../typography";
+import Link from "next/link";
+import { H1 } from "~/components/typography";
 import { getAllPostsQuery } from "~/contexts/blog/getAllPosts.query";
 
-export const BlogSection = async () => {
-  const posts = (await getAllPostsQuery()).slice(0, 3);
+export default async function BlogPage() {
+  const posts = await getAllPostsQuery();
   return (
-    <section
-      id="blog"
-      className="flex flex-col items-center justify-center bg-gray-50 px-4 py-12"
-    >
-      <div className="container flex flex-col items-center ">
-        <H2>Latest Articles</H2>
+    <>
+      <section className="container m-auto my-8 mb-8 flex max-w-7xl flex-col px-4">
+        <H1 className="pb-2">Latest Articles</H1>
+      </section>
+      <section className="container m-auto my-8 mb-8 flex max-w-7xl flex-col px-4">
         {posts.map(({ title, thumbnail, author, date, snippet, id }) => (
           <article key={id}>
             <Link href={`/blog/${id}`}>
@@ -34,7 +32,7 @@ export const BlogSection = async () => {
             </Link>
           </article>
         ))}
-      </div>
-    </section>
+      </section>
+    </>
   );
-};
+}

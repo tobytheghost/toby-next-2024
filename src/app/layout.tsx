@@ -1,8 +1,9 @@
-import "~/styles/globals.css";
-
 import { Poppins } from "next/font/google";
 import { Header } from "~/components/sections/Header";
 import { Footer } from "~/components/sections/Footer";
+
+import "~/styles/globals.css";
+import "highlight.js/styles/github-dark.css";
 
 const inter = Poppins({
   weight: ["200", "400", "600", "700"],
@@ -11,11 +12,9 @@ const inter = Poppins({
 });
 
 export const metadata = {
-  title: "Toby Gates | Senior Software Engineer",
-  description:
-    "Senior Software Engineer based in Bedfordshire, UK working on bespoke, fast, responsive and secure web applications.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
+
 
 export default function RootLayout({
   children,

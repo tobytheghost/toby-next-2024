@@ -9,7 +9,7 @@ export const HeroSection = () => {
       className="flex h-[50vh] flex-col items-center justify-center bg-gray-950 px-4 py-12"
     >
       <div className="container flex flex-col items-center text-white">
-        <H1>
+        <H1 className="after:hidden">
           Hi, i'm <span className="text-yellow-500">Toby Gates</span>.
         </H1>
         <h2 className="mb-4 text-3xl font-semibold">
@@ -17,7 +17,7 @@ export const HeroSection = () => {
         </h2>
         <div className="flex gap-4">
           <YellowClickyLink href="#contact">Contact Me</YellowClickyLink>
-          <BlackClickyLink href="#blog">Web Dev Blog</BlackClickyLink>
+          <BlackClickyLink href="/blog">Web Dev Blog</BlackClickyLink>
         </div>
       </div>
     </section>

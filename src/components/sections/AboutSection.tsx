@@ -33,7 +33,7 @@ export const AboutSection = () => {
           </div>
           <div className="flex flex-1 flex-col items-center">
             <H3>What do I do?</H3>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2">
               <TechCard name="Front-end Development" icon={<FrontEndIcon />}>
                 Create fast and dynamic web and mobile apps using modern
                 Javascript frameworks.
