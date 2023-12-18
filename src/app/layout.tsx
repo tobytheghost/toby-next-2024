@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 
 const inter = Poppins({
   weight: ["400", "700"],
+  subsets: ["latin"],
   variable: "--font-sans",
 });
 
