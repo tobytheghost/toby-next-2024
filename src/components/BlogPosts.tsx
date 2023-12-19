@@ -8,7 +8,7 @@ const BlogPosts = ({ posts }: { posts: AllPosts }) => {
     <div className="mb-8 grid w-full grid-cols-1 items-center gap-4 md:grid-cols-2 lg:grid-cols-3">
       {posts.map(({ title, thumbnail, author, date, snippet, id, tags }) => (
         <article key={id} className="group mb-4 w-full">
-          <Link href={`/blog/${id}`}>
+          <Link href={`/web-development-blog/${id}`}>
             <div className="relative w-full overflow-hidden rounded-md pb-[60%]">
               <NextImage
                 className="absolute h-full w-full transform object-cover transition-all duration-200 ease-in-out group-hover:scale-[1.05]"

@@ -10,7 +10,7 @@ export const menuItems: MenuItems = [
   },
   {
     name: "Blog",
-    url: "/blog",
+    url: "/web-development-blog",
   },
   {
     name: "Contact",
