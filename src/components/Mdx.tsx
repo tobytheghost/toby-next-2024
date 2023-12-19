@@ -5,11 +5,14 @@ import { MDXRemote } from "next-mdx-remote";
 import { type BlogPostSource } from "~/utils/blogPostParser";
 
 import {
-  Demo1,
-  Demo2,
-  Demo3,
-  Demo4,
-} from "./blog/animating-with-framer-motion/demos";
+  FramerMotionDemo1,
+  FramerMotionDemo2,
+  FramerMotionDemo3,
+  FramerMotionDemo4,
+  StarsDemo1,
+  StarsDemo2,
+  StarsDemo3,
+} from "./blog/demos";
 
 const Mdx = (props: BlogPostSource) => {
   return (
@@ -70,10 +73,13 @@ const Mdx = (props: BlogPostSource) => {
               {...props}
             />
           ),
-          Demo1,
-          Demo2,
-          Demo3,
-          Demo4,
+          FramerMotionDemo1,
+          FramerMotionDemo2,
+          FramerMotionDemo3,
+          FramerMotionDemo4,
+          StarsDemo1,
+          StarsDemo2,
+          StarsDemo3,
         }}
       />
     </div>

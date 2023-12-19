@@ -1,7 +1,16 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { Stars } from "../Stars";
+import { Canvas, useFrame } from "@react-three/fiber";
+import {
+  type Points,
+  type BufferGeometry,
+  type NormalBufferAttributes,
+  type Material,
+} from "three";
+import { Stars as DStars } from "@react-three/drei";
 
-export const Demo1 = () => {
+export const FramerMotionDemo1 = () => {
   const [items, setItems] = useState(["Item", "Item", "Item"]);
   const handleOnClick = () => {
     setItems((items) => [...items, "Item"]);
@@ -18,7 +27,7 @@ export const Demo1 = () => {
   );
 };
 
-export const Demo2 = () => {
+export const FramerMotionDemo2 = () => {
   const [items, setItems] = useState(["Item", "Item", "Item"]);
   const handleOnClick = () => {
     setItems((items) => [...items, "Item"]);
@@ -45,7 +54,7 @@ export const Demo2 = () => {
   );
 };
 
-export const Demo3 = () => {
+export const FramerMotionDemo3 = () => {
   const [items, setItems] = useState<string[]>([]);
   const loadItems = () => {
     setItems(["Item", "Item", "Item"]);
@@ -81,7 +90,7 @@ export const Demo3 = () => {
   );
 };
 
-export const Demo4 = () => {
+export const FramerMotionDemo4 = () => {
   const [items, setItems] = useState<string[]>([]);
   const loadItems = () => {
     setItems(["Item", "Item", "Item"]);
@@ -120,6 +129,72 @@ export const Demo4 = () => {
           ))}
         </ul>
       )}
+    </div>
+  );
+};
+
+export const StarsDemo1 = () => {
+  return (
+    <div
+      className="stars-demo"
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "300px",
+        marginBottom: "1rem",
+      }}
+    >
+      <Stars orbit={true} noOrbitals={true} />
+    </div>
+  );
+};
+
+export const StarsDemo2 = () => {
+  return (
+    <div
+      className="stars"
+      style={{
+        background:
+          "radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)",
+        height: "300px",
+        marginBottom: "1rem",
+      }}
+    >
+      <Canvas>
+        <DStars />
+      </Canvas>
+    </div>
+  );
+};
+
+const RotatingStars = () => {
+  const stars =
+    useRef<
+      Points<BufferGeometry<NormalBufferAttributes>, Material | Material[]>
+    >(null);
+
+  useFrame(() => {
+    if (!stars.current) return;
+    stars.current.rotation.x = stars.current.rotation.y += 0.00015;
+  });
+
+  return <DStars ref={stars} />;
+};
+
+export const StarsDemo3 = () => {
+  return (
+    <div
+      className="stars"
+      style={{
+        background:
+          "radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)",
+        height: "300px",
+        marginBottom: "1rem",
+      }}
+    >
+      <Canvas>
+        <RotatingStars />
+      </Canvas>
     </div>
   );
 };

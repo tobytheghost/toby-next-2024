@@ -5,7 +5,7 @@ import { type AllPosts } from "~/contexts/blog/getAllPosts.query";
 
 const BlogPosts = ({ posts }: { posts: AllPosts }) => {
   return (
-    <div className="mb-8 grid w-full grid-cols-1 items-center gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <div className="mb-8 grid w-full grid-cols-1 items-start gap-4 md:grid-cols-2 lg:grid-cols-3">
       {posts.map(({ title, thumbnail, author, date, snippet, id, tags }) => (
         <article key={id} className="group mb-4 w-full">
           <Link href={`/web-development-blog/${id}`}>
