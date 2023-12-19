@@ -4,6 +4,13 @@ import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote";
 import { type BlogPostSource } from "~/utils/blogPostParser";
 
+import {
+  Demo1,
+  Demo2,
+  Demo3,
+  Demo4,
+} from "./blog/animating-with-framer-motion/demos";
+
 const Mdx = (props: BlogPostSource) => {
   return (
     <div className="flex flex-col">
@@ -12,10 +19,16 @@ const Mdx = (props: BlogPostSource) => {
         components={{
           h1: () => null,
           h2: (props) => (
-            <h2 className="mb-4 text-3xl font-semibold" {...props} />
+            <h2
+              className="mb-4 mt-6 text-3xl font-semibold first-of-type:mt-0"
+              {...props}
+            />
           ),
           h3: (props) => (
-            <h3 className="mb-4 text-2xl font-semibold" {...props} />
+            <h3
+              className="mb-4 mt-2 text-2xl font-semibold first-of-type:mt-0"
+              {...props}
+            />
           ),
           h4: (props) => (
             <h4 className="mb-4 text-xl font-semibold" {...props} />
@@ -57,6 +70,10 @@ const Mdx = (props: BlogPostSource) => {
               {...props}
             />
           ),
+          Demo1,
+          Demo2,
+          Demo3,
+          Demo4,
         }}
       />
     </div>
