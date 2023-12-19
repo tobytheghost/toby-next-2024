@@ -63,7 +63,7 @@ export const HeroSection = () => {
       <div className="absolute bottom-4 left-4 hidden md:block">
         <YellowClickyButton
           onClick={toggleOrbit}
-          aria-label="Orbit 3D Background"
+          aria-label={!orbit ? "Explore Space!" : "Back to Earth"}
         >
           {!orbit ? "Explore Space!" : "Back to Earth"}
         </YellowClickyButton>{" "}
