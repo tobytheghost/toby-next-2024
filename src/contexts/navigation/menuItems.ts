@@ -5,6 +5,10 @@ type MenuItems = {
 
 export const menuItems: MenuItems = [
   {
+    name: "Home",
+    url: "/",
+  },
+  {
     name: "Blog",
     url: "/blog",
   },

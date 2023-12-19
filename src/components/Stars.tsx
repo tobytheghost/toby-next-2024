@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, Suspense } from "react";
+import React, { useRef, useEffect, Suspense, useState } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
 import {
@@ -140,15 +140,27 @@ type StarsCanvasProps = {
 };
 
 const StarsCanvas = ({ orbit, noOrbitals }: StarsCanvasProps) => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
   return (
     <div className="three-canvas relative">
-      <Canvas>
-        <directionalLight intensity={1} castShadow position={[0, 0, 1]} />
-        <RotatingStars />
-        {!noOrbitals && <Orbital />}
-        {!noOrbitals && <Orbital2 />}
-        {orbit && <OrbitControls />}
-      </Canvas>
+      <span
+        className={`transition-opacity duration-1000 ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <Canvas>
+          <directionalLight intensity={1} castShadow position={[0, 0, 1]} />
+          <RotatingStars />
+          {!noOrbitals && <Orbital />}
+          {!noOrbitals && <Orbital2 />}
+          {orbit && <OrbitControls />}
+        </Canvas>
+      </span>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import {
   WhiteClickyLink,
   YellowClickyButton,
@@ -33,10 +33,10 @@ export const HeroSection = () => {
       >
         {!orbit && (
           <>
-            <h1 className="mb-4 text-center text-4xl font-semibold md:text-6xl ">
+            <h1 className="pointer-events-none mb-4 text-center text-4xl font-semibold md:text-6xl">
               Hi, i'm <span className="text-yellow-500">Toby Gates</span>.
             </h1>
-            <h2 className="mb-8 text-center text-2xl font-semibold md:text-3xl">
+            <h2 className="pointer-events-none mb-8 text-center text-2xl font-semibold md:text-3xl">
               I'm <span ref={typewriter}>full stack web developer.</span>
             </h2>
             <div className="flex gap-4">
@@ -53,8 +53,12 @@ export const HeroSection = () => {
           </>
         )}
       </div>
-      <StarsCanvas orbit={orbit} />
-      <div className="absolute bottom-4 left-4">
+      <div className={!orbit ? "pointer-events-none" : ""}>
+        <Suspense fallback={null}>
+          <StarsCanvas orbit={orbit} />
+        </Suspense>
+      </div>
+      <div className="absolute bottom-4 left-4 hidden md:block">
         <YellowClickyButton
           onClick={toggleOrbit}
           aria-label="Orbit 3D Background"

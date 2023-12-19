@@ -1,5 +1,5 @@
 import React from "react";
-import { H2 } from "../typography";
+import { H2, P } from "../typography";
 import { StackCard } from "../StackCard";
 import {
   ExpressIcon,
@@ -12,7 +12,7 @@ import {
 
 export const StackSection = () => {
   return (
-    <section className="flex flex-col items-center justify-center bg-gray-100 px-4 pb-2 pt-16">
+    <section className="flex flex-col items-center justify-center bg-gray-100 px-4 pb-8 pt-16">
       <div className="container flex flex-col items-center ">
         <H2>My Stack</H2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

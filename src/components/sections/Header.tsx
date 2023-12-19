@@ -30,7 +30,6 @@ export const Header = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Close the navigation panel
     setMenuOpen(false);
   }, [pathname]);
 
@@ -53,7 +52,7 @@ export const Header = () => {
                 return (
                   <li key={name}>
                     <button
-                      className="relative block p-4 text-2xl font-semibold text-yellow-500"
+                      className="relative block p-4 text-2xl font-semibold"
                       onClick={() => setMenuOpen(false)}
                     >
                       {name}
