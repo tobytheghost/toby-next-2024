@@ -2,7 +2,7 @@ import BlogPosts from "~/components/BlogPosts";
 import { H1 } from "~/components/typography";
 import { getAllPostsQuery } from "~/contexts/blog/getAllPosts.query";
 
-export const metaData = {
+export const metadata = {
   title: "Web Development Blog - Senior Software Engineer | Toby Gates",
   description:
     "Personal Blog by Toby Gates. My notes, thoughts, ideas & answers to frequently asked questions.",
