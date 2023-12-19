@@ -1,5 +1,5 @@
 import React from "react";
-import { H2, P } from "../typography";
+import { H2 } from "../typography";
 import { StackCard } from "../StackCard";
 import {
   ExpressIcon,

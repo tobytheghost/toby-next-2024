@@ -25,7 +25,9 @@ export const Footer = () => {
       <ul className="flex gap-4">
         {socialLinks.map(({ name, url }) => (
           <li key={name}>
-            <YellowClickyLink href={url}>{getIcon(name)}</YellowClickyLink>
+            <YellowClickyLink href={url} aria-label={name}>
+              {getIcon(name)}
+            </YellowClickyLink>
           </li>
         ))}
       </ul>
