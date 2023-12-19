@@ -1,7 +1,7 @@
 import { ContactForm } from "~/components/ContactForm";
 import { H1 } from "~/components/typography";
 
-export const metaData = {
+export const metadata = {
   title: "Contact - Senior Software Engineer | Toby Gates",
   description: "Contact Toby Gates",
 };
