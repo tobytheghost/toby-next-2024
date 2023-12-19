@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect, Suspense, useState } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls, Stars } from "@react-three/drei";
+import { OrbitControls, Stars as DStars } from "@react-three/drei";
 import {
   type BufferGeometry,
   type Material,
@@ -18,18 +18,30 @@ type SphereProps = {
   position: [number, number, number];
   size: [number, number, number];
   color: string;
+  texture?: string;
 };
 
-const ColourSphere = ({ position, size, color }: SphereProps) => {
-  const colors = useLoader(TextureLoader, "/assets/img/colours.png");
-  const sphere =
-    useRef<
-      Mesh<
-        BufferGeometry<NormalBufferAttributes>,
-        Material | Material[],
-        Object3DEventMap
-      >
-    >(null);
+type StarsProps = {
+  orbit?: boolean;
+  noOrbitals?: boolean;
+};
+
+type MeshRef = Mesh<
+  BufferGeometry<NormalBufferAttributes>,
+  Material | Material[],
+  Object3DEventMap
+>;
+
+type GroupRef = Group<Object3DEventMap>;
+
+type StarsRef = Points<
+  BufferGeometry<NormalBufferAttributes>,
+  Material | Material[]
+>;
+
+const Sphere = ({ position, size, color, texture }: SphereProps) => {
+  const colors = texture ? useLoader(TextureLoader, texture) : undefined;
+  const sphere = useRef<MeshRef>(null);
 
   useFrame(() => {
     if (!sphere.current) return;
@@ -37,33 +49,7 @@ const ColourSphere = ({ position, size, color }: SphereProps) => {
   });
 
   return (
-    <Suspense fallback={<div></div>}>
-      <mesh ref={sphere} position={position}>
-        <sphereGeometry attach="geometry" args={size} />
-        <meshStandardMaterial attach="material" color={color} map={colors} />
-      </mesh>
-    </Suspense>
-  );
-};
-
-const CloudSphere = ({ position, size, color }: SphereProps) => {
-  const colors = useLoader(TextureLoader, "/assets/img/clouds.png");
-  const sphere =
-    useRef<
-      Mesh<
-        BufferGeometry<NormalBufferAttributes>,
-        Material | Material[],
-        Object3DEventMap
-      >
-    >(null);
-
-  useFrame(() => {
-    if (!sphere.current) return;
-    sphere.current.rotation.x = sphere.current.rotation.y += 0.00015;
-  });
-
-  return (
-    <Suspense fallback={<div></div>}>
+    <Suspense fallback={null}>
       <mesh ref={sphere} position={position}>
         <sphereGeometry attach="geometry" args={size} />
         <meshStandardMaterial attach="material" color={color} map={colors} />
@@ -73,7 +59,7 @@ const CloudSphere = ({ position, size, color }: SphereProps) => {
 };
 
 const Orbital = () => {
-  const orbital = useRef<Group<Object3DEventMap>>(null);
+  const orbital = useRef<GroupRef>(null);
 
   useEffect(() => {
     if (!orbital.current) return;
@@ -88,58 +74,35 @@ const Orbital = () => {
   return (
     <group ref={orbital} position={[-6, -2, -2]}>
       <Suspense fallback={null}>
-        <CloudSphere position={[1, 0, 1]} size={[0.2, 8, 8]} color="#fafafa" />
-        <ColourSphere position={[0, 0, 0]} size={[0.6, 8, 8]} color="#5fb7ff" />
-      </Suspense>
-    </group>
-  );
-};
-
-const Orbital2 = () => {
-  const orbital = useRef<Group<Object3DEventMap>>(null);
-
-  useEffect(() => {
-    if (!orbital.current) return;
-    orbital.current.rotation.x = 0.4;
-  }, []);
-
-  useFrame(() => {
-    if (!orbital.current) return;
-    orbital.current.rotation.y += 0.01;
-  });
-
-  return (
-    <group ref={orbital} position={[6, 2, -2]}>
-      <Suspense fallback={null}>
-        <mesh>
-          <sphereGeometry attach="geometry" args={[0.5, 8, 8]} />
-          <meshStandardMaterial attach="material" color="#ff9800" />
-        </mesh>
+        <Sphere
+          position={[1, 0, 1]}
+          size={[0.2, 8, 8]}
+          color="#fafafa"
+          texture="/assets/img/clouds.png"
+        />
+        <Sphere
+          position={[0, 0, 0]}
+          size={[0.6, 8, 8]}
+          color="#5fb7ff"
+          texture="/assets/img/colours.png"
+        />
       </Suspense>
     </group>
   );
 };
 
 const RotatingStars = () => {
-  const stars =
-    useRef<
-      Points<BufferGeometry<NormalBufferAttributes>, Material | Material[]>
-    >(null);
+  const stars = useRef<StarsRef>(null);
 
   useFrame(() => {
     if (!stars.current) return;
     stars.current.rotation.x = stars.current.rotation.y += 0.00015;
   });
 
-  return <Stars ref={stars} />;
+  return <DStars ref={stars} />;
 };
 
-type StarsCanvasProps = {
-  orbit?: boolean;
-  noOrbitals?: boolean;
-};
-
-const StarsCanvas = ({ orbit, noOrbitals }: StarsCanvasProps) => {
+export const Stars = ({ orbit, noOrbitals }: StarsProps) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -156,13 +119,19 @@ const StarsCanvas = ({ orbit, noOrbitals }: StarsCanvasProps) => {
         <Canvas>
           <directionalLight intensity={1} castShadow position={[0, 0, 1]} />
           <RotatingStars />
-          {!noOrbitals && <Orbital />}
-          {!noOrbitals && <Orbital2 />}
+          {!noOrbitals && (
+            <>
+              <Orbital />
+              <Sphere
+                color="#ff9800"
+                size={[0.5, 8, 8]}
+                position={[6, 2, -2]}
+              />
+            </>
+          )}
           {orbit && <OrbitControls />}
         </Canvas>
       </span>
     </div>
   );
 };
-
-export default StarsCanvas;

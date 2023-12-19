@@ -1,5 +1,5 @@
 import { P } from "../typography";
-import { YellowClickyLink } from "../buttons";
+import { YellowButton } from "../Button";
 
 export const CtaSection = () => {
   return (
@@ -13,9 +13,9 @@ export const CtaSection = () => {
           details of how it works can by found on my GitHub profile.
         </P>
         <div>
-          <YellowClickyLink href="https://github.com/tobytheghost/toby-next-2024">
+          <YellowButton href="https://github.com/tobytheghost/toby-next-2024">
             Check out how it works!
-          </YellowClickyLink>
+          </YellowButton>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { YellowClickyButton, YellowClickyLink } from "./buttons";
+import { YellowButton } from "./Button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
@@ -58,7 +58,7 @@ export const ContactForm = () => {
         <h2 className="mb-4 text-center text-2xl font-semibold">Whoops!</h2>
         <p className="mb-4 text-center">{serverError}</p>
         <div className="max-w-1/2 flex justify-center">
-          <YellowClickyLink href="/">Back to home</YellowClickyLink>
+          <YellowButton href="/">Back to home</YellowButton>
         </div>
       </div>
     );
@@ -73,7 +73,7 @@ export const ContactForm = () => {
           I'll get back to you as soon as I can.
         </p>
         <div className="max-w-1/2 flex justify-center">
-          <YellowClickyLink href="/">Back to home</YellowClickyLink>
+          <YellowButton href="/">Back to home</YellowButton>
         </div>
       </div>
     );
@@ -152,7 +152,7 @@ export const ContactForm = () => {
           )}
         </div>
       </label>
-      <YellowClickyButton type="submit">Submit</YellowClickyButton>
+      <YellowButton type="submit">Submit</YellowButton>
     </form>
   );
 };

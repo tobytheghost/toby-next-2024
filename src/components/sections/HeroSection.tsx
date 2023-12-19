@@ -1,12 +1,8 @@
 "use client";
 
 import { Suspense, useState } from "react";
-import {
-  WhiteClickyLink,
-  YellowClickyButton,
-  YellowClickyLink,
-} from "../buttons";
-import StarsCanvas from "../Stars";
+import { WhiteButton, YellowButton } from "../Button";
+import { Stars } from "../Stars";
 import { useTypewriter } from "~/hooks/useTypewriter";
 
 export const HeroSection = () => {
@@ -40,10 +36,8 @@ export const HeroSection = () => {
               I'm <span ref={typewriter}>full stack web developer.</span>
             </h2>
             <div className="flex gap-4">
-              <YellowClickyLink href="/contact">Contact Me</YellowClickyLink>
-              <WhiteClickyLink href="/web-development-blog">
-                Web Blog
-              </WhiteClickyLink>
+              <YellowButton href="/contact">Contact Me</YellowButton>
+              <WhiteButton href="/web-development-blog">Web Blog</WhiteButton>
             </div>
           </>
         )}
@@ -57,16 +51,16 @@ export const HeroSection = () => {
       </div>
       <div className={!orbit ? "pointer-events-none" : ""}>
         <Suspense fallback={null}>
-          <StarsCanvas orbit={orbit} />
+          <Stars orbit={orbit} />
         </Suspense>
       </div>
       <div className="absolute bottom-4 left-4 hidden md:block">
-        <YellowClickyButton
+        <YellowButton
           onClick={toggleOrbit}
           aria-label={!orbit ? "Explore Space!" : "Back to Earth"}
         >
           {!orbit ? "Explore Space!" : "Back to Earth"}
-        </YellowClickyButton>{" "}
+        </YellowButton>{" "}
       </div>
     </section>
   );

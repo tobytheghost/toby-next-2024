@@ -1,6 +1,6 @@
 import { Poppins } from "next/font/google";
-import { Header } from "~/components/sections/Header";
-import { Footer } from "~/components/sections/Footer";
+import { Header } from "~/components/layout/Header";
+import { Footer } from "~/components/layout/Footer";
 
 import "~/styles/globals.css";
 import "highlight.js/styles/github-dark.css";

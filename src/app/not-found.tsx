@@ -1,5 +1,5 @@
 import NextImage from "next/image";
-import { YellowClickyLink } from "~/components/buttons";
+import { YellowButton } from "~/components/Button";
 import { P } from "~/components/typography";
 
 export default function NotFoundPage() {
@@ -26,7 +26,7 @@ export default function NotFoundPage() {
             Sorry, the page you are looking for cannot be found.
           </P>
           <div className="flex justify-center">
-            <YellowClickyLink href="/">Return to home</YellowClickyLink>
+            <YellowButton href="/">Return to home</YellowButton>
           </div>
         </div>
       </section>

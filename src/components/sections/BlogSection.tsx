@@ -1,6 +1,6 @@
 import { H2 } from "../typography";
 import { type AllPosts } from "~/contexts/blog/getAllPosts.query";
-import { YellowClickyLink } from "../buttons";
+import { YellowButton } from "../Button";
 import BlogPosts from "../BlogPosts";
 
 export const BlogSection = async ({ posts }: { posts: AllPosts }) => {
@@ -12,9 +12,9 @@ export const BlogSection = async ({ posts }: { posts: AllPosts }) => {
       <div className="container flex flex-col items-center">
         <H2>Latest Articles</H2>
         <BlogPosts posts={posts} />
-        <YellowClickyLink href="/web-development-blog">
+        <YellowButton href="/web-development-blog">
           View more articles
-        </YellowClickyLink>
+        </YellowButton>
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ import {
 } from "~/contexts/navigation/socialLinks";
 import { FacebookSvg, GithubSvg, LinkedInSvg } from "../svgs/headerSvgs";
 import { assertUnreachable } from "~/utils/typescriptUtilities";
-import { YellowClickyLink } from "../buttons";
+import { YellowButton } from "../Button";
 
 const getIcon = (name: SocialLinkNames) => {
   switch (name) {
@@ -25,9 +25,9 @@ export const Footer = () => {
       <ul className="flex gap-4">
         {socialLinks.map(({ name, url }) => (
           <li key={name}>
-            <YellowClickyLink href={url} aria-label={name}>
+            <YellowButton href={url} aria-label={name}>
               {getIcon(name)}
-            </YellowClickyLink>
+            </YellowButton>
           </li>
         ))}
       </ul>
