@@ -12,7 +12,9 @@ export const BlogSection = async ({ posts }: { posts: AllPosts }) => {
       <div className="container flex flex-col items-center">
         <H2>Latest Articles</H2>
         <BlogPosts posts={posts} />
-        <YellowClickyLink href="/blog">View more articles</YellowClickyLink>
+        <YellowClickyLink href="/web-development-blog">
+          View more articles
+        </YellowClickyLink>
       </div>
     </section>
   );

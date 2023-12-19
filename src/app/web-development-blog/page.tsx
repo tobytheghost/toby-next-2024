@@ -2,6 +2,12 @@ import BlogPosts from "~/components/BlogPosts";
 import { H1 } from "~/components/typography";
 import { getAllPostsQuery } from "~/contexts/blog/getAllPosts.query";
 
+export const metaData = {
+  title: "Web Development Blog - Senior Software Engineer | Toby Gates",
+  description:
+    "Personal Blog by Toby Gates. My notes, thoughts, ideas & answers to frequently asked questions.",
+};
+
 export default async function BlogPage() {
   const posts = await getAllPostsQuery();
   return (

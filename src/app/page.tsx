@@ -6,7 +6,7 @@ import { StackSection } from "~/components/sections/StackSection";
 import { getAllPostsQuery } from "~/contexts/blog/getAllPosts.query";
 
 export const metadata = {
-  title: "Toby Gates | Senior Software Engineer",
+  title: "Senior Software Engineer | Toby Gates",
   description:
     "Senior Software Engineer based in Bedfordshire, UK working on bespoke, fast, responsive and secure web applications.",
 };

@@ -4,8 +4,12 @@ import { serialize } from "next-mdx-remote/serialize";
 import rehypeHighlight from "rehype-highlight";
 
 export const getPostBySlugQuery = async (id: string) => {
-  const postFile = fs.readFileSync(path.resolve(`src/content/blog/${id}.mdx`));
+  const filePath = path.resolve(`src/content/blog/${id}.mdx`);
+  const postFile = fs.readFileSync(filePath);
   if (!postFile) return;
+
+  const stats = fs.statSync(filePath);
+  const { mtime } = stats || {};
 
   const postMeta = await serialize(postFile, {
     parseFrontmatter: true,
@@ -17,6 +21,10 @@ export const getPostBySlugQuery = async (id: string) => {
 
   return {
     ...postMeta,
+    frontmatter: {
+      ...postMeta.frontmatter,
+      lastModified: mtime,
+    },
     id,
   };
 };

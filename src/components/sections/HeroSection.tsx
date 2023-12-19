@@ -41,7 +41,9 @@ export const HeroSection = () => {
             </h2>
             <div className="flex gap-4">
               <YellowClickyLink href="/contact">Contact Me</YellowClickyLink>
-              <WhiteClickyLink href="/blog">Web Dev Blog</WhiteClickyLink>
+              <WhiteClickyLink href="/web-development-blog">
+                Web Blog
+              </WhiteClickyLink>
             </div>
           </>
         )}

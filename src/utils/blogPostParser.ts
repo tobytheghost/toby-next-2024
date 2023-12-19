@@ -14,6 +14,7 @@ const blogPostSchema = z.object({
     thumbnail: z.string().url(),
     description: z.string(),
     snippet: z.string(),
+    lastModified: z.coerce.date(),
   }),
   scope: z.object({
     // ...

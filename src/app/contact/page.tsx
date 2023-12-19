@@ -1,6 +1,11 @@
 import { ContactForm } from "~/components/ContactForm";
 import { H1 } from "~/components/typography";
 
+export const metaData = {
+  title: "Contact - Senior Software Engineer | Toby Gates",
+  description: "Contact Toby Gates",
+};
+
 export default async function ContactPage() {
   return (
     <>
