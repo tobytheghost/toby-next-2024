@@ -74,7 +74,7 @@ export const Header = () => {
               <ul className="flex">
                 {socialLinks.map(({ name, url }) => (
                   <li key={name}>
-                    <Link className="block p-4" href={url}>
+                    <Link className="block p-4" href={url} aria-label={name}>
                       {getSocialIcon(name)}
                     </Link>
                   </li>
