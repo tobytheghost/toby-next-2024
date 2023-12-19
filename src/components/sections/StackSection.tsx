@@ -3,10 +3,13 @@ import { H2, P } from "../typography";
 import { StackCard } from "../StackCard";
 import {
   ExpressIcon,
+  JestIcon,
   PrismaIcon,
   ReactIcon,
+  StorybookIcon,
   TailwindIcon,
   TypescriptIcon,
+  VSCodeIcon,
   ZodIcon,
 } from "../svgs/stackCardSvgs";
 
@@ -42,6 +45,30 @@ export const StackSection = () => {
             Tailwind CSS is an open source CSS framework. It is a utility-first
             CSS framework that is composed of more than 300 CSS utility classes
             to build custom user interfaces.
+          </StackCard>
+          <StackCard
+            name="VS Code"
+            icon={<VSCodeIcon />}
+            href="https://code.visualstudio.com/"
+          >
+            Visual Studio Code, also commonly referred to as VS Code, is a
+            source-code editor developed by Microsoft for Windows, Linux and
+            macOS.
+          </StackCard>
+          <StackCard name="Jest" icon={<JestIcon />} href="https://jestjs.io/">
+            Jest is a JavaScript testing framework designed to ensure
+            correctness of any JavaScript codebase. It allows you to write tests
+            with an approachable, familiar and feature-rich API that gives you
+            results quickly.
+          </StackCard>
+          <StackCard
+            name="Storybook"
+            icon={<StorybookIcon />}
+            href="https://storybook.js.org/"
+          >
+            Storybook is a frontend workshop for building UI components and
+            pages in isolation. Thousands of teams use it for UI development,
+            testing, and documentation.
           </StackCard>
           <StackCard name="Zod" href="https://zod.dev/" icon={<ZodIcon />}>
             Zod is a TypeScript-first schema declaration and validation library.
