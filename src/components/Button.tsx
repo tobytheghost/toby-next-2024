@@ -38,7 +38,7 @@ export const YellowButton = ({ children, ...props }: ButtonProps) => {
 export const WhiteButton = ({ children, ...props }: ButtonProps) => {
   return (
     <ButtonComponent
-      className="group relative top-[2px] inline-block w-auto rounded-md bg-yellow-700 text-center text-black"
+      className="group relative top-[2px] inline-block w-auto rounded-md bg-gray-300 text-center text-black"
       {...props}
     >
       <span className="relative mx-[-1.5px] block w-auto -translate-y-1 select-none rounded-md  bg-gray-50 px-5 py-2 text-center font-semibold active:-translate-y-0.5 active:transition-all active:duration-100 group-hover:-translate-y-1.5">
