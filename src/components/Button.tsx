@@ -10,7 +10,10 @@ const isLink = (props: ButtonProps): props is ReactLinkProps => {
 };
 
 const isButton = (props: ButtonProps): props is ReactButtonProps => {
-  return (props as ReactButtonProps).onClick !== undefined;
+  return (
+    (props as ReactButtonProps).onClick !== undefined ||
+    (props as ReactButtonProps).type !== undefined
+  );
 };
 
 const ButtonComponent = ({ children, ...props }: ButtonProps) => {

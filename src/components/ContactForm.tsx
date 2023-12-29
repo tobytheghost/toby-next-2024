@@ -152,7 +152,9 @@ export const ContactForm = () => {
           )}
         </div>
       </label>
-      <YellowButton type="submit">Submit</YellowButton>
+      <div className="flex justify-center">
+        <YellowButton type="submit">Submit</YellowButton>
+      </div>
     </form>
   );
 };
