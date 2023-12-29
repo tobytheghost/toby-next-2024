@@ -1,0 +1,80 @@
+---
+title: Automatically adding size labels to your GitHub PRs
+description: Setting up a GitHub action to automatically add size labels to your PRs
+snippet: Recently i've found it useful to add size labels to PRs. This has allowed my colleages and I to quickly see which PRs are large and which are small...
+thumbnail: https://picsum.photos/id/180/500/300
+image: https://picsum.photos/id/180/1248/250
+date: "2023-12-29"
+author: Toby Gates
+tags: ["GitHub", "Action"]
+---
+
+## Introduction
+
+Recently i've found it useful to add size labels to PRs. This has allowed my colleages and I to quickly see which PRs are large and which are small, allowing us to prioritise the larger PRs first. 
+
+It also allowed us to track the size of our PRs over time, which was useful for spotting trends and identifying areas for improvement.
+
+In this article I'll show you how to get setup with the [GitHub action we've setup](https://github.com/tobytheghost/pr-auto-label-action) that will automatically add size labels to your PRs.
+
+## Setting up the action
+
+To add size labels to your PRs you'll need to create a GitHub action. This action will run whenever a PR is opened or updated and will add a label to the PR based on the number of lines changed.
+
+To use the action that I've created, you'll need to add a new action to your `.github/workflows/` directory.
+
+Create a new file called `pr-auto-label-action.yml` and add the following code:
+
+```yaml
+name: PR Auto Label Action
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - labeled
+      - unlabeled
+jobs:
+  pr-auto-label-action:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: tobytheghost/pr-auto-label-action@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+This will run the action whenever a PR is opened, edited, synchronised, labelled or unlabelled. It will also give the action permission to write to the PR.
+
+You can mark files as ignored by adding the `IGNORED_FILES` environment variable (next to the `GITHUB_TOKEN` variable). This should be a space separated list of file names. 
+
+For example, if you wanted to ignore `package-lock.json` and `yarn.lock` you would add the following to your workflow file:
+
+```yaml
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  IGNORED_FILES: package-lock.json yarn.lock
+```
+
+## How it works
+
+The action uses the GitHub API to get the number of lines changed in the PR. It then uses this number to determine which label to add to the PR.
+
+The following labels will be added to your Pull Requests depending on their size:
+
+- `size/XS` - 1 - 50 lines
+- `size/S` - 51 - 100 lines
+- `size/M` - 101 - 250 lines
+- `size/L` - 251 - 500 lines
+- `size/XL` - 501 - 1000 lines
+- `size/XXL` - 1001+ lines
+
+## Conclusion
+
+I hope you find this action as useful as I have. 
+
+If you have any questions or suggestions, please feel free to drop me a message via my socials or through the [contact form](/contact)!
+
+You can find the source code for the action here: [tobytheghost/pr-auto-label-action](https://github.com/tobytheghost/pr-auto-label-action).
